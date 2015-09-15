@@ -1,4 +1,4 @@
 ## Dotfiles
 
 # Theme uses for OSX terminal 
-The [Piperita] terminal theme. (https://github.com/jacobtomlinson/terminal-piperita)
+The [Piperita] (https://github.com/jacobtomlinson/terminal-piperita) terminal theme. 
