@@ -1,0 +1,24 @@
+[user]
+	name = 
+	email = 
+
+[core]
+	editor = vim
+	pager = less
+
+[http]
+	sslverify = false
+
+[alias]
+	st = status
+	df = diff
+	co = checkout
+	ci = commit
+	br = branch
+
+[color]
+	# Enable colors in color-supporting terminals
+	ui = auto
+
+[push]
+	default = upstream

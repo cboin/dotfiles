@@ -1,5 +1,10 @@
 # Set the prompt 
-export PS1="\u@\h [\[$(tput sgr0)\]\[\033[38;5;27m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]] \\$ "
+if [ $(id -u) -eq 0 ];
+then
+	export PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '	
+else
+	export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '	
+fi
 
 # Set the PATH
 export PATH=${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:${PATH}
@@ -9,12 +14,12 @@ export PATH=${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
 shopt -s checkwinsize
 
 # Some shortcuts
-alias ls='ls -F'
-alias ll='ls -lF'
-alias la='ls -alF'
-alias cls='clear ; ls -F'
-alias cla='clear ; ls -alF'
-alias cll='clear ; ls -lF'
+alias ls='ls -F --color'
+alias ll='ls -lF --color'
+alias la='ls -alF --color'
+alias cls='clear ; ls -F --color'
+alias cla='clear ; ls -alF --color'
+alias cll='clear ; ls -lF --color'
 alias diskspace='du -sh | sort -n -r | more'
 alias f='find . | grep '
 alias today='grep -h -d skip `date +%m/%d` /usr/share/calendar/*'
@@ -64,7 +69,3 @@ extract () {
        echo "'$1' is not a valid file!"
    fi
 }
-
-# Make ls use colors
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
