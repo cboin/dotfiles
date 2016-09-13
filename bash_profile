@@ -14,6 +14,7 @@ export PATH=${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
 shopt -s checkwinsize
 
 # Some shortcuts
+alias l='ls -F --color'
 alias ls='ls -F --color'
 alias ll='ls -lF --color'
 alias la='ls -alF --color'
