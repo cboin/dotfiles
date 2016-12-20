@@ -26,6 +26,10 @@ export LESS_TERMCAP_so="$(tput bold; tput setaf 3; tput setab 4)"
 export LESS_TERMCAP_ue="$(tput sgr0)"
 export LESS_TERMCAP_us="$(tput bold; tput setaf 4)"
 
+# Color LESS
+export LESS='-R'
+export LESSOPEN=' | ~/lessfilter %s'
+
 # Some shortcuts
 alias l='ls -F --color'
 alias ls='ls -F --color'
@@ -37,6 +41,7 @@ alias cll='clear ; ls -lF --color'
 alias diskspace='du -sh | sort -n -r | more'
 alias f='find . | grep '
 alias today='grep -h -d skip `date +%m/%d` /usr/share/calendar/*'
+alias grep='grep --color=auto'
 
 # Backup files
 old () {
@@ -89,26 +94,3 @@ color_success="$(tput setaf 10)"
 color_failure="$(tput setaf 9)"
 color_normal="$(tput sgr0)"
 color_fade="$(tput setaf 15)"
-
-function _prompt_() {
-    local err="$?"
-
-    if [ "$err" -ne 0 ] ;
-    then
-        if [ "$err" -gt 128 -a "$err" -le 192 ]
-        then # Failure or Signal
-            echo "$color_fade[$color_failure$err$color_normal/$color_failure$(kill -l "$err"|tr '[:upper:]' '[:lower:]')$color_fade]$color_normal"
-        else # Failure
-            echo "${color_fade}[$color_failure$err$color_fade]$color_normal"
-        fi
-    else # OK 
-        echo "$color_fade[${color_success}0$color_fade]$color_normal"
-    fi
-}
-
-PROMPT_COMMAND="_prompt_"
-
-# Git
-export GIT_PS1_SHOWCOLORHINTS=yes
-export GIT_PS1_SHOWUPSTREAM=verbose
-source /usr/lib/git-core/git-sh-prompt

@@ -12,7 +12,7 @@ runtime! debian.vim
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
 " options, so any other options should be set AFTER setting 'compatible'.
-set compatible
+set nocompatible
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
@@ -50,6 +50,7 @@ set softtabstop=4	" ...
 set shiftwidth=4	" ...
 set noexpandtab		" ...
 set colorcolumn=110	" Display a visual barrier for col 110
+set number	" Show line numbers
 highlight ColorColumn ctermbg=darkgray
 
 " Filetype detection 
@@ -57,3 +58,18 @@ augroup project
     autocmd!
         autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
 augroup END
+
+filetype off 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" local plugins
+Plugin 'file:///home/boinc/.vim/Plugins'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
