@@ -1,8 +1,0 @@
-app.autostart-configured=true
-storage.last-location="/home/boinc/.cache/spotify/Storage"
-app.autostart-mode=""
-autologin.username="boincl"
-autologin.saved_credentials="{\"boincl\":[\"boincl\",\"ST0cvjoMscrcvnnRq8axFzwB9qI6/A9wtaIpSZloac3oCa3y5jS+7Vf2nn9tOfW5\"]}"
-core.clock_delta=1
-autologin.canonical_username="boincl"
-autologin.blob="ST0cvjoMscrcvnnRq8axFzwB9qI6/A9wtaIpSZloac3oCa3y5jS+7Vf2nn9tOfW5"
