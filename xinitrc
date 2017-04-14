@@ -1,1 +1,2 @@
-xrdb ~/.Xresources
+#!/bin/bash
+exec i3
