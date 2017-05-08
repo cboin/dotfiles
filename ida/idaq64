@@ -1,0 +1,2 @@
+#!/bin/sh
+wine '/opt/ida6.6/idaq.exe' &>/dev/null
