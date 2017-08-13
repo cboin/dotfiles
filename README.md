@@ -13,3 +13,7 @@ $ chmod +x /usr/bin/idaq*
 ```
 # curl https://raw.githubusercontent.com/cboin/dotfiles/master/10-keyboard-layout.conf > /etc/X1/xorg/conf.d/10-keyboard-layout.conf
 ```
+## Xrandr DualScreen
+```
+$ xrandr --output DVI-D-0 --auto --output DVI-I-1 --auto --right-of DVI-D-0 
+```
