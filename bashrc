@@ -21,6 +21,14 @@ alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
 
+# wrap these commands for interactive use to avoid accidental overwrites.
+rm() { command rm -i "$@"; }
+cp() { command cp -i "$@"; }
+mv() { command mv -i "$@"; }
+
+# no double entries in the shell history
+export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
+
 # Setup rails
 export PATH=$PATH:/home/boinc/.gem/ruby/2.4.0/bin
 

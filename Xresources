@@ -1,61 +1,69 @@
-! urxvt
-URxvt*geometry:     115x40
-URxvt*font:         xft:DejaVu Sans Mono:size=12:antialias=true:hinting=true
-URxvt*depth:        24
-URxvt*borderless:   1
-URxvt*scrollBar:    false
-URxvt*saveLines:    2000
-URxvt.transparent:  true
-URxvt*.shading:     10
+!! Font
+! Using Xft
+URxvt*font:           xft:Inconsolata:size=10
+! Bind C--, C-0(=) and C-+ to activate small, medium, and big font size resp.
+URxvt.keysym.C-minus: 	command:\033]710;xft:Liberation Mono:pixelsize=12\007
+URxvt.keysym.C-0:	command:\033]710;xft:DejaVu Sans Mono:pixelsize=16\007
+URxvt.keysym.C-plus:	command:\033]710;xft:Liberation Mono:pixelsize=20\007
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.autohint:   false
+Xft.lcdfilter:  lcddefault
 
-! Emacs font
-Emacs.font: Inconsolata-11
+!! Scrollbar
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
+URxvt.scrollstyle: rxvt
 
-!! perl extensions
-URxvt.perl-ext:             default,url-select,clipboard
+!! Printing
+! The string will be interpreted as if typed into the shell as-is.
+! In this example, printing will be disabled altogether.
+URxvt.print-pipe: "cat > /dev/null"
 
-! url-select (part of urxvt-perls package)
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.autocopy:  true
-URxvt.url-select.button:    2
-URxvt.url-select.launcher:  chromium
-URxvt.url-select.underline: true
+!! Copy/Past and URL handling
+!-*- Perl extensions -*-
+URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1 
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.Control-Shift-V:     perl:pasta:paste
+! Comment this if you dont want copy when text is selected
+URxvt.clipboard.autocopy: true
 
-! Nastavuje kopirovani
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
-
-! disable the stupid ctrl+shift 'feature'
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-
-!urxvt color scheme:
-URxvt*background: #2B2B2B
-URxvt*foreground: #DEDEDE
-
-URxvt*colorUL: #86a2b0
-
+!! Color theme
+*background: #0f0f0f
+*foreground: #c8c8c8
 ! black
-URxvt*color0  : #2E3436
-URxvt*color8  : #555753
+*color0:  #2E3436
+*color8:  #555753
 ! red
-URxvt*color1  : #CC0000
-URxvt*color9  : #EF2929
+*color1:  #a40000
+*color9:  #EF2929
 ! green
-URxvt*color2  : #4E9A06
-URxvt*color10 : #8AE234
+*color2:  #4E9A06
+*color10: #8AE234
 ! yellow
-URxvt*color3  : #C4A000
-URxvt*color11 : #FCE94F
+*color3:  #C4A000
+*color11: #FCE94F
 ! blue
-URxvt*color4  : #3465A4
-URxvt*color12 : #729FCF
-! magenta
-URxvt*color5  : #75507B
-URxvt*color13 : #AD7FA8
-! cyan
-URxvt*color6  : #06989A
-URxvt*color14 : #34E2E2
+*color4:  #3465A4
+*color12: #729FCF
+! purple
+*color5:  #75507B
+*color13: #AD7FA8
+! orange (replaces cyan)
+*color6:  #ce5c00
+*color14: #fcaf3e
 ! white
-URxvt*color7  : #D3D7CF
-URxvt*color15 : #EEEEEC
+*color7:  #babdb9
+*color15: #EEEEEC
+
+!! Transparency
+urxvt*transparent: true
+urxvt*shading: 30
