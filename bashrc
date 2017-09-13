@@ -34,3 +34,7 @@ export PATH=$PATH:/home/boinc/.gem/ruby/2.4.0/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Export Tools
+export PATH=/home/m1/boin/Tools/tmux:$PATH
+
