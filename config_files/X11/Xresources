@@ -1,68 +1,27 @@
 !! Font
-! Using Xft
-URxvt*font:           xft:Inconsolata:size=10
-! Bind C--, C-0(=) and C-+ to activate small, medium, and big font size resp.
-URxvt.keysym.C-minus: 	command:\033]710;xft:Liberation Mono:pixelsize=12\007
-URxvt.keysym.C-0:	command:\033]710;xft:DejaVu Sans Mono:pixelsize=16\007
-URxvt.keysym.C-plus:	command:\033]710;xft:Liberation Mono:pixelsize=20\007
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-Xft.autohint:   false
-Xft.lcdfilter:  lcddefault
+xterm*faceName: Ubuntu Mono:size=12
 
-!! Scrollbar
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.scrollBar_floating: false
-URxvt.scrollstyle: rxvt
 
-!! Printing
-! The string will be interpreted as if typed into the shell as-is.
-! In this example, printing will be disabled altogether.
-URxvt.print-pipe: "cat > /dev/null"
-
-!! Copy/Past and URL handling
-!-*- Perl extensions -*-
-URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
-URxvt.keysym.M-u:     perl:url-select:select_next
-URxvt.url-launcher:   /usr/bin/firefox
-URxvt.underlineURLs:  True
-URxvt.matcher.button: 1 
-URxvt.keysym.M-Escape:perl:keyboard-select:activate
-URxvt.keysym.Control-Shift-V:     perl:pasta:paste
-! Comment this if you dont want copy when text is selected
-URxvt.clipboard.autocopy: true
-
-!! Color theme
-*background: #0f0f0f
-*foreground: #c8c8c8
-! black
-*color0:  #2E3436
-*color8:  #555753
-! red
-*color1:  #a40000
-*color9:  #EF2929
-! green
-*color2:  #4E9A06
-*color10: #8AE234
-! yellow
-*color3:  #C4A000
-*color11: #FCE94F
-! blue
-*color4:  #3465A4
-*color12: #729FCF
-! purple
-*color5:  #75507B
-*color13: #AD7FA8
-! orange (replaces cyan)
-*color6:  #ce5c00
-*color14: #fcaf3e
-! white
-*color7:  #babdb9
-*color15: #EEEEEC
+! Molokai theme
+*xterm*background: #1D1D19
+*xterm*foreground: #F6F5EE
+*xterm*cursorColor: #d0d0d0
+*xterm*color0: #101010
+*xterm*color1: #960050
+*xterm*color2: #66aa11
+*xterm*color3: #c47f2c
+*xterm*color4: #30309b
+*xterm*color5: #7e40a5
+*xterm*color6: #3579a8
+*xterm*color7: #9999aa
+*xterm*color8: #303030
+*xterm*color9: #ff0090
+*xterm*color10: #80ff00
+*xterm*color11: #ffba68
+*xterm*color12: #5f5fee
+*xterm*color13: #bb88dd
+*xterm*color14: #4eb4fa
+*xterm*color15: #d0d0d0
 
 !! Transparency
 urxvt*transparent: true

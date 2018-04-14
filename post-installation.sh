@@ -49,3 +49,7 @@ ln -sf $dotfiles_dir/vim $HOME/.vim
 echo "(i) set zsh config"
 ln -sf $dotfiles_dir/zsh/oh-my-zsh $HOME/.oh-my-zsh
 ln -sf $dotfiles_dir/zsh/zshrc $HOME/.zshrc
+
+# Set temite config
+echo "(i) set termite config"
+ln -sf $dotfiles_dir/termite/config $HOME/.config/termite/config
