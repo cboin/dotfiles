@@ -1,23 +1,35 @@
-execute pathogen#infect()
+" NeoBundle Scripts
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
+" Required:
+set runtimepath+=/home/boinc/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('/home/boinc/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'itchyny/lightline.vim'
+
+" Required:
+call neobundle#end()
+
+" Required:
 filetype plugin indent on
-syntax on
 
-" 80 characters line
-set colorcolumn=81
-"execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+" End NeoBundle Scripts
 
-" Highlight trailing spaces
-" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" Basic config 
 
-" Tab style
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" LightLine
+set laststatus=2
+set noshowmode
+let g:lightline = {'colorscheme': 'wombat', }

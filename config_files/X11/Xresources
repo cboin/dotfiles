@@ -1,6 +1,5 @@
 !! Font
-xterm*faceName: Ubuntu Mono:size=12
-
+xterm*faceName: Ubuntu Mono:size=13
 
 ! Molokai theme
 *xterm*background: #1D1D19
