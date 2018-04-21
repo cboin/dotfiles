@@ -15,6 +15,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'airblade/vim-gitgutter'
 
 " Required:
 call neobundle#end()
@@ -27,9 +28,23 @@ filetype plugin indent on
 NeoBundleCheck
 " End NeoBundle Scripts
 
-" Basic config 
+" Basic config
+syntax on
+set number
+set colorcolumn=80
+set hlsearch
+autocmd BufWritePre * :%s/\s\+$//e
 
 " LightLine
 set laststatus=2
 set noshowmode
 let g:lightline = {'colorscheme': 'wombat', }
+
+" GitGutter
+set signcolumn=yes
+
+" Disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
